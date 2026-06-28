@@ -5,63 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CATENA</title>
     <meta name="description" content="Catena">
+    <link rel="icon" href="./favicon.ico" sizes="any">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <style>
+      :root {
+        color-scheme: dark;
+        --bg: #080808;
+        --text: #ffffff;
+        --muted: #b9b7b0;
+        --line: #2b2b29;
+        --panel: #11110f;
+        --accent: #d7bd75;
+        --accent-soft: rgba(215, 189, 117, 0.12);
+      }
+
       * {
+        box-sizing: border-box;
         margin: 0;
       }
 
-      .flex-center {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      html {
+        background: var(--bg);
       }
 
       body {
-        color: #ffffff;
-        background-color: #090909;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
         min-height: 100vh;
-      }
-
-      .container {
-        width: min(100% - 2rem, 800px);
-        margin: 1rem;
-      }
-
-      .center {
-        text-align: center;
-      }
-
-      .mb-1 {
-        margin-bottom: 0.5rem;
-      }
-
-      .mt-1 {
-        margin-top: 0.5rem;
-      }
-
-      .mb-2 {
-        margin-bottom: 1rem;
-      }
-
-      .mt-2 {
-        margin-top: 1rem;
-      }
-
-      h1 {
-        margin: 0;
-        font-size: 2em;
-        font-weight: 600;
-        line-height: 1.25;
-        width: 100%;
-      }
-
-      h2 {
-        border-bottom: 1px solid #30363d;
-        font-size: 1.5em;
-        font-weight: 600;
-        line-height: 1.2;
-        width: 100%;
+        color: var(--text);
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+          var(--bg);
+        background-size: 64px 64px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+        line-height: 1.6;
       }
 
       img {
@@ -70,66 +46,157 @@
       }
 
       a {
-        color: #58a6ff;
+        color: var(--text);
         text-decoration: none;
       }
 
-      a:hover {
-        text-decoration: underline;
+      a:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
       }
 
-      p {
-        width: 100%;
-      }
-
-      ul {
-        width: 100%;
-      }
-
-      code {
-        background-color: rgba(110, 118, 129, 0.4);
-        border-radius: 6px;
-        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-        font-size: 85%;
-        padding: 0.2em 0.4em;
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: min(100% - 2rem, 760px);
+        margin: 0 auto;
+        padding: 16vh 0 5rem;
       }
 
       .logo {
-        max-width: 30rem;
-        padding-top: max(4rem, 18vh);
+        width: min(86vw, 34rem);
+        height: auto;
       }
 
-      .logo + h3 {
-        font-size: 1.17em;
+      .tagline {
+        margin-top: 1rem;
+        color: var(--muted);
+        font-size: clamp(1.1rem, 2vw, 1.35rem);
+        font-weight: 650;
+        text-align: center;
+      }
+
+      .github-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.75rem;
+        margin-top: 1.25rem;
+        padding: 0 1rem;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--panel);
+        color: var(--text);
+        font-size: 0.95rem;
+        font-weight: 700;
+      }
+
+      .github-link:hover {
+        border-color: var(--accent);
+        background: var(--accent-soft);
+      }
+
+      .intro {
+        width: 100%;
+        margin-top: 2.5rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .intro p {
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .intro a {
+        color: var(--text);
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-color: var(--line);
+        text-underline-offset: 0.22em;
+      }
+
+      .intro a:hover {
+        text-decoration-color: var(--accent);
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        width: 100%;
+        margin-top: 1.25rem;
+        padding: 0;
+        list-style: none;
+      }
+
+      .features li {
+        min-height: 7rem;
+        padding: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(17, 17, 15, 0.88);
+      }
+
+      .features strong {
+        display: block;
+        margin-bottom: 0.35rem;
+        color: var(--text);
+        font-size: 0.95rem;
+        line-height: 1.25;
+      }
+
+      .features span {
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .promise {
+        margin-top: 1.25rem;
+        color: var(--muted);
+        font-size: 0.95rem;
+        text-align: center;
       }
 
       @media (max-width: 560px) {
         .container {
-          width: min(100% - 1rem, 800px);
+          width: min(100% - 1.25rem, 760px);
+          padding-top: 12vh;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
         }
       }
     </style>
   </head>
-  <body class="flex-center">
-    <div class="container flex-center">
-        <img class="logo mb-1" src="./catena-logo.svg" alt="CATENA logo" width="1180" height="180">
-        <h3 class="center mb-1">the deterministic array language</h3>
-        <a href="https://github.com/hellas-ai/catgrad" target="_blank" rel="noreferrer" class="mb-1">View on GitHub</a>
+  <body>
+    <main class="container">
+        <img class="logo" src="./catena-logo.svg" alt="CATENA logo" width="1180" height="180">
+        <h1 class="tagline">the deterministic array language</h1>
+        <a href="https://github.com/hellas-ai/catena" target="_blank" rel="noreferrer" class="github-link">View on GitHub</a>
+
+      <section class="intro" aria-label="About Catena">
         <p>
           <a href="https://github.com/hellas-ai/catena">catena</a>
           is an array programming language which is
           <b>secure</b>
           and
           <b>deterministic</b>
-          <br/>
-          This means that:
-          <br/>
-          <ul>
-            <li>You can safely run untrusted catena programs</li>
-            <li>Programs produce bitwise identical results across all platforms</li>
-          </ul>
-          ... or your money back!
         </p>
-    </div>
+        <ul class="features">
+          <li>
+            <strong>Run untrusted programs</strong>
+            <span>You can safely run untrusted catena programs.</span>
+          </li>
+          <li>
+            <strong>Reproduce exact results</strong>
+            <span>Programs produce bitwise identical results across all platforms.</span>
+          </li>
+        </ul>
+        <p class="promise">... or your money back!</p>
+      </section>
+    </main>
   </body>
 </html>

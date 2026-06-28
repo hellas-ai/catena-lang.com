@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CATENA</title>
+    <meta name="description" content="Catena">
+    <style>
+      * {
+        margin: 0;
+      }
+
+      .flex-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      body {
+        color: #ffffff;
+        background-color: #090909;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+        min-height: 100vh;
+      }
+
+      .container {
+        width: min(100% - 2rem, 800px);
+        margin: 1rem;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .mb-1 {
+        margin-bottom: 0.5rem;
+      }
+
+      .mt-1 {
+        margin-top: 0.5rem;
+      }
+
+      .mb-2 {
+        margin-bottom: 1rem;
+      }
+
+      .mt-2 {
+        margin-top: 1rem;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2em;
+        font-weight: 600;
+        line-height: 1.25;
+        width: 100%;
+      }
+
+      h2 {
+        border-bottom: 1px solid #30363d;
+        font-size: 1.5em;
+        font-weight: 600;
+        line-height: 1.2;
+        width: 100%;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      a {
+        color: #58a6ff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      p {
+        width: 100%;
+      }
+
+      ul {
+        width: 100%;
+      }
+
+      code {
+        background-color: rgba(110, 118, 129, 0.4);
+        border-radius: 6px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        font-size: 85%;
+        padding: 0.2em 0.4em;
+      }
+
+      .logo {
+        max-width: 30rem;
+        padding-top: max(4rem, 18vh);
+      }
+
+      .logo + h3 {
+        font-size: 1.17em;
+      }
+
+      @media (max-width: 560px) {
+        .container {
+          width: min(100% - 1rem, 800px);
+        }
+      }
+    </style>
+  </head>
+  <body class="flex-center">
+    <div class="container flex-center">
+        <img class="logo mb-1" src="./catena-logo.svg" alt="CATENA logo" width="1180" height="180">
+        <h3 class="center mb-1">the deterministic array language</h3>
+        <a href="https://github.com/hellas-ai/catgrad" target="_blank" rel="noreferrer" class="mb-1">View on GitHub</a>
+        <p>
+          <a href="https://github.com/hellas-ai/catena">catena</a>
+          is an array programming language which is
+          <b>secure</b>
+          and
+          <b>deterministic</b>
+          <br/>
+          This means that:
+          <br/>
+          <ul>
+            <li>You can safely run untrusted catena programs</li>
+            <li>Programs produce bitwise identical results across all platforms</li>
+          </ul>
+          ... or your money back!
+        </p>
+    </div>
+  </body>
+</html>
